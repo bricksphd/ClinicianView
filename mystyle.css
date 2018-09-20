@@ -68,6 +68,6 @@ input[type=checkbox] {
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #10a7d5;
+  background:#10a7d1;
   cursor: pointer;
 }
