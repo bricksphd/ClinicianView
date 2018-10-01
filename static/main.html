@@ -307,7 +307,7 @@
           this.setText(pth);
           if (fs.existsSync(pth)) {
             this.game = child(pth);
-            this.socket.emit("forUnity", { data: "blocks and blocks" });
+            this.socket.emit("forUnity", { data: "blocks and blocks" });//blocks and blocks?
           }
           else {
             console.error("Game location invalid");
@@ -340,8 +340,10 @@
           this.currentView = "clinician";
 
 
-          var pth = localStorage.getItem("BalloonGame");
-          console.log(pth);
+          //var pth = localStorage.getItem("BalloonGame");
+          //console.log(pth);
+          var pth = "C:\Users\brian\Desktop\GamesFolderTest\BalloonGame.unity";
+          alert("C:\Users\brian\Desktop\GamesFolderTest\BalloonGame.unity");
           //var pathToBinary = path.join(); 
           this.setText(pth);
           if (fs.existsSync(pth)) {
