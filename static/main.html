@@ -340,10 +340,9 @@
           this.currentView = "clinician";
 
 
-          //var pth = localStorage.getItem("BalloonGame");
-          //console.log(pth);
-          var pth = "C:\Users\brian\Desktop\GamesFolderTest\BalloonGame.unity";
-          alert("C:\Users\brian\Desktop\GamesFolderTest\BalloonGame.unity");
+          var pth = localStorage.getItem("BalloonGame");
+          console.log(pth);
+          //alert("C:\Users\brian\Desktop\GamesFolderTest\BalloonGame.unity");
           //var pathToBinary = path.join(); 
           this.setText(pth);
           if (fs.existsSync(pth)) {
