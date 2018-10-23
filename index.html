@@ -4,8 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Rhino Rehab: Sign In</title>
+  <script>
+    window._config = {
+    
+    cognito: {
+            
+    userPoolId: 'us-east-1_acHigLp2m', 
 
-  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+    userPoolClientId: '4dgn27rjd7pfp7lcovbjgktvpu', 
+
+    region: 'us-east-1' // e.g. us-east-2
+        },
+        
+    api: {
+            invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod',
+        
+    }
+    };    
+  </script>
+
+  <!--<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -20,7 +38,7 @@
   </script>
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" /> //we don't need firebase anymore-->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" /> 
   <link rel="stylesheet" type="text/css" href="mystyle.css">
 
   <script type="text/javascript">
@@ -39,7 +57,7 @@
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
-  </script>
+  </script>-->
 
   <style>
     .bookend{
@@ -58,7 +76,15 @@
   <div id="app">
 
     <h1 style="padding: 4rem;"><center><h1><img src="Rhino.png" class="bookend" >Rhino Rehab<img src="Rhino.png" class="bookend flip"></h1></center></h1>
-    <div id="firebaseui-auth-container"></div>
+    <div>
+        <h1>Sign In</h1>
+        <form id="signInForm">
+          <input type ="email" id="emailInputSignin" placeHolder="Email" required>
+          <input type = "password" id="passwordInputSignin" placeholder="Password" pattern=".*" required>
+
+          <input type ="submit" value="Sign In">
+          </form>
+    </div>
 
    
   </div>
