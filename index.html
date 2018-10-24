@@ -4,24 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Rhino Rehab: Sign In</title>
-  <script>
-    window._config = {
-    
-    cognito: {
-            
-    userPoolId: 'us-east-1_acHigLp2m', 
-
-    userPoolClientId: '4dgn27rjd7pfp7lcovbjgktvpu', 
-
-    region: 'us-east-1' // e.g. us-east-2
-        },
-        
-    api: {
-            invokeUrl: '' // e.g. https://rc7nyt4tql.execute-api.us-west-2.amazonaws.com/prod',
-        
-    }
-    };    
-  </script>
 
   <!--<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
   <script>
@@ -39,7 +21,7 @@
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.0.0/firebaseui.css" /> 
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  
 
   <script type="text/javascript">
     // FirebaseUI config.
@@ -59,6 +41,7 @@
     ui.start('#firebaseui-auth-container', uiConfig);
   </script>-->
 
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
   <style>
     .bookend{
       height:100px;
@@ -75,21 +58,41 @@
 
   <div id="app">
 
+      <div id="noCognitoMessage" class="configMessage" style="display: none;">
+          <div class="backdrop"></div>
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title">No Cognito User Pool Configured</h3>
+              </div>
+              <div class="panel-body">
+                  <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+              </div>
+          </div>
+      </div>
+
     <h1 style="padding: 4rem;"><center><h1><img src="Rhino.png" class="bookend" >Rhino Rehab<img src="Rhino.png" class="bookend flip"></h1></center></h1>
     <div>
-        <h1>Sign In</h1>
-        <form id="signInForm">
-          <input type ="email" id="emailInputSignin" placeHolder="Email" required>
-          <input type = "password" id="passwordInputSignin" placeholder="Password" pattern=".*" required>
+        <h3><center>Register</center></h3>
+        <section class="form-wrap">
+          <form id="registrationForm"><center>
+            <input type="email" id="emailInputRegister" placeholder="Email" pattern=".*" required></br>
+            <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required></br>
+            <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required></br>
 
-          <input type ="submit" value="Sign In">
+            <input type="submit" value="Create User"></center>
           </form>
+      </section>
     </div>
 
    
   </div>
 
-
+  <script src="js/vendor/jquery-3.1.0.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+  <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/cognito-auth.js"></script>
 
   
 </body>
