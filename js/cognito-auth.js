@@ -117,7 +117,7 @@ var WildRydes = window.WildRydes || {};
         signin(email, password,
             function signinSuccess() {
                 console.log('Successfully Logged In');
-                window.location.href = 'ride.html';
+                window.location.href = 'main.html';
             },
             function signinError(err) {
                 alert(err);
@@ -135,7 +135,7 @@ var WildRydes = window.WildRydes || {};
             console.log('user name is ' + cognitoUser.getUsername());
             var confirmation = ('Registration successful. Please check your email inbox or spam folder for your verification code.');
             if (confirmation) {
-                window.location.href = 'verify.html';
+                window.location.href = 'index.html';
             }
         };
         var onFailure = function registerFailure(err) {
